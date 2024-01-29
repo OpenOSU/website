@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html class="vh-100">
+
+<head>
+    <title>OpenOSU</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,500,700" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --OpenOrange: #A42;
+            --BackdropOrange: #DBA;
+            --ReadableWhite: #FED;
+            --HeaderFont: "Oswald";
+            --ParagraphFont: "Nunito";
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--ReadableWhite);
+        }
+        * {
+            box-sizing: border-box;
+            font: 1em/1.6 var(--HeaderFont)
+        }
+
+        *+* {
+            margin: .5em 0
+        }
+
+        pre {
+            overflow: auto
+        }
+
+        @media(min-width:35em) {
+            .col {
+                display: table-cell
+            }
+
+            .\31 {
+                width: 5%
+            }
+
+            .\33 {
+                width: 22%
+            }
+
+            .\34 {
+                width: 30%
+            }
+
+            .\35 {
+                width: 40%
+            }
+
+            .\32 {
+                width: 15%
+            }
+
+            .\36 {
+                width: 50%
+            }
+
+            .row {
+                display: table;
+                border-spacing: 1em 0
+            }
+        }
+
+        .row,
+        .w-100 {
+            width: 100%
+        }
+
+        .card,
+        pre {
+            padding: 1em;
+            border: solid 0.5em
+        }
+
+        .btn:hover,
+        a:hover {
+            opacity: .6
+        }
+
+        .c {
+            max-width: 60em;
+            padding: 1em;
+            margin: auto
+        }
+
+        h6 {
+            font: 500 1em var(--HeaderFont)
+        }
+
+        h5 {
+            font: 500 1.2em var(--HeaderFont)
+        }
+
+        h3 {
+            font: 500 2em var(--HeaderFont)
+        }
+
+        h4 {
+            font: 500 1.5em var(--HeaderFont)
+        }
+
+        h2 {
+            font: 500 2.2em var(--HeaderFont)
+        }
+
+        h1 {
+            font: 500 2.5em var(--HeaderFont)
+        }
+
+        p {
+            font: 500 1em/1.6 var(--ParagraphFont)
+        }
+
+        a {
+            color: var(--OpenOrange);
+            text-decoration: none
+        }
+
+        .btn.primary {
+            color: var(--ReadableWhite);
+            background: var(--OpenOrange);
+            border: solid var(--OpenOrange)
+        }
+
+        td,
+        th {
+            padding: 1em;
+            text-align: left;
+            border-bottom: solid var(--ReadableWhite)
+        }
+
+        .btn {
+            padding: 1em;
+            text-transform: uppercase;
+            background: var(--ReadableWhite);
+            border: solid;
+            font: 800 .8em var(--HeaderFont)
+        }
+
+        .white {
+            color: var(--ReadableWhite)
+        }
+
+        .bg-white {
+            background-color: var(--ReadableWhite)
+        }
+
+        .b-white {
+            border-color: var(--ReadableWhite)
+        }
+
+        .primary {
+            color: var(--OpenOrange)
+        }
+
+        .bg-primary {
+            background-color: var(--OpenOrange)
+        }
+
+        .b-primary {
+            border-color: var(--OpenOrange)
+        }
+
+        .light {
+            color: var(--BackdropOrange)
+        }
+
+        .bg-light {
+            background-color: var(--BackdropOrange)
+        }
+
+        .b-light {
+            border-color: var(--BackdropOrange)
+        }
+
+        .m0 {
+            margin: 0
+        }
+
+        .m1 {
+            margin: .5em
+        }
+
+        .m2 {
+            margin: 1em
+        }
+
+        .m3 {
+            margin: 2em
+        }
+
+        .m4 {
+            margin: 4em
+        }
+
+        .mt0 {
+            margin-top: 0
+        }
+
+        .mt1 {
+            margin-top: .5em
+        }
+
+        .mt2 {
+            margin-top: 1em
+        }
+
+        .mt3 {
+            margin-top: 2em
+        }
+
+        .mt4 {
+            margin-top: 4em
+        }
+
+        .mr0 {
+            margin-right: 0
+        }
+
+        .mr1 {
+            margin-right: .5em
+        }
+
+        .mr2 {
+            margin-right: 1em
+        }
+
+        .mr3 {
+            margin-right: 2em
+        }
+
+        .mr4 {
+            margin-right: 4em
+        }
+
+        .mb0 {
+            margin-bottom: 0
+        }
+
+        .mb1 {
+            margin-bottom: .5em
+        }
+
+        .mb2 {
+            margin-bottom: 1em
+        }
+
+        .mb3 {
+            margin-bottom: 2em
+        }
+
+        .mb4 {
+            margin-bottom: 4em
+        }
+
+        .ml0 {
+            margin-left: 0
+        }
+
+        .ml1 {
+            margin-left: .5em
+        }
+
+        .ml2 {
+            margin-left: 1em
+        }
+
+        .ml3 {
+            margin-left: 2em
+        }
+
+        .ml4 {
+            margin-left: 4em
+        }
+
+        .p0 {
+            padding: 0
+        }
+
+        .p1 {
+            padding: .5em
+        }
+
+        .p2 {
+            padding: 1em
+        }
+
+        .p3 {
+            padding: 2em
+        }
+
+        .p4 {
+            padding: 4em
+        }
+
+        .pv0 {
+            padding-top: 0;
+            padding-bottom: 0
+        }
+
+        .pv1 {
+            padding-top: .5em;
+            padding-bottom: .5em
+        }
+
+        .pv2 {
+            padding-top: 1em;
+            padding-bottom: 1em
+        }
+
+        .pv3 {
+            padding-top: 2em;
+            padding-bottom: 2em
+        }
+
+        .pv4 {
+            padding-top: 4em;
+            padding-bottom: 4em
+        }
+
+        .ph0 {
+            padding-right: 0;
+            padding-left: 0
+        }
+
+        .ph1 {
+            padding-right: .5em;
+            padding-left: .5em
+        }
+
+        .ph2 {
+            padding-right: 1em;
+            padding-left: 1em
+        }
+
+        .ph3 {
+            padding-right: 2em;
+            padding-left: 2em
+        }
+
+        .ph4 {
+            padding-right: 4em;
+            padding-left: 4em
+        }
+
+        .gapless {
+            border-spacing: 0
+        }
+
+        .vc {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .pill {
+            border-radius: 9999px
+        }
+
+        .rounded {
+            border-radius: 4px
+        }
+
+        .tc {
+            text-align: center
+        }
+
+        .mega {
+            font-size: 3.5em
+        }
+
+        .large {
+            font-size: 1.5em
+        }
+
+        .small {
+            font-size: .7em
+        }
+
+        .caps {
+            text-transform: uppercase
+        }
+
+        .tracked {
+            letter-spacing: .1em
+        }
+
+        .vh-100 {
+            height: 100vh
+        }
+
+        .inline {
+            display: inline-block
+        }
+
+        .bold {
+            font-weight: 700
+        }
+
+        .normal {
+            font-weight: 400
+        }
+
+        .light {
+            font-weight: 300
+        }
+
+        .dim {
+            opacity: 1;
+            transition: opacity .15s ease-in
+        }
+
+        .dim:focus,
+        .dim:hover {
+            opacity: .5;
+            transition: opacity .15s ease-in
+        }
+    </style>
+    <style>
+        .sticky {
+            top: 0;
+            position: -webkit-sticky;
+            position: sticky
+        }
+
+        .f-primary {
+            filter: invert(29%) sepia(18%) saturate(5449%) hue-rotate(349deg) brightness(92%) contrast(85%)
+        }
+    </style>
+</head>
+
+<body class="m0">
+    <div class="m0 vh-100" id="top">
+        <div class="tc card vh-100 bg-light b-primary">
+            <div class="vc c">
+                <img class="f-primary mb3" src="openosu.svg" style="width:20em;max-width:80%" />
+                <div class="m0 f-primary">
+                    <a href="https://instagram.com/open_osu">
+                        <img class="inline-block m0" src="img/instagram.png" style="width:5em;max-width:20%" />
+                    </a>
+                    <a href="https://tiktok.com/@open_osu">
+                        <img class="inline-block m0" src="img/tiktok.png" style="width:5em;max-width:20%" />
+                    </a>
+                    <a href="https://x.com/open_osu">
+                        <img class="inline-block m0" src="img/twitter.png" style="width:5em;max-width:20%" />
+                    </a>
+                    <a href="https://github.com/openosu">
+                        <img class="inline-block m0" src="img/github.png" style="width:5em;max-width:20%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tc m0 p2 bg-primary row sticky">
+        <a class="col light m2" href="#about">About</a>
+        <a class="col light m2" href="#resources">Resources</a>
+        <a class="col light m2" href="#follow">Follow</a>
+        <a class="col light m2" href="#support">Support</a>
+    </div>
+    <img class="m0 w-100" src="img/banner.webp" />
+    <div class="c">
+        <div id="about">
+            <h1 class="primary">&gt; About OpenOSU</h1>
+            <div class="tc card bg-light b-primary" style="padding: 0 0 1em;overflow:auto">
+                <h1 class="primary">Open OSU!</h1>
+                <p>We are Chandler Donahey and Will Garrison, and the vision for our campaign is rooted in the
+                    principles of
+                    transparency, accessibility, and support for every student at OSU. We are committed to truly
+                    accessible
+                    information, the expansion of student media, and unwavering support for student-run organizations.
+                </p>
+                <div class="row m0">
+                    <div class="4 col">
+                        <h2 class="primary">Expanding Student Media</h2>
+                        <p>
+                            A thriving university requires a well-informed student body, and we believe that a robust
+                            media is central to achieving this goal. By allocating time and resources to the Orange Media
+                            Network, we will ensure that every major OSU event is reported on.
+                            <br><br>
+                            We also want to create programs focused on the inner workings of the university. Under our 
+                            administration, the expansion of student media will serve as a catalyst for student engagement 
+                            and prosperity.
+                        </p>
+                    </div>
+                    <div class="4 col">
+                        <h2 class="primary">Truly Accessible Information</h2>
+                        <p>
+                            Our university can be a difficult and intimidating system to navigate.
+                            As the leaders of your student government, we will work to ensure that vital information
+                            such as financials, staff contacts, and other crucial data are easily available. 
+                            <br><br>
+                            Through the implementation of user-friendly platforms and regular updates, we aim to make 
+                            information more than just available; it should be understandable and empower you to
+                            engage meaningfully in the decisions that shape our university.
+                        </p>
+                    </div>
+                    <div class="4 col">
+                        <h2 class="primary">Supporting Student Organizations</h2>
+                        <p>
+                            From building our public image to fostering a passionate community, clubs are one of the most 
+                            impactful aspects of OSU. As club leaders ourselves, we know the obstacles that student 
+                            organizations face on a daily basis
+                            <br><br>
+                            Our priorities lay in streamlining common processes, making leadership transitions easier, 
+                            and finding dedicated spaces for clubs. Your efforts and commitment should be matched
+                            with the resources and support of the university as we work toward our collective mission of
+                            building a stronger OSU community.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="resources">
+            <h1 class="primary">&gt; Our Resources</h1>
+            <div class="tc card bg-light b-primary" style="padding: 0 0 1em;">
+                <p></p>
+            </div>
+        </div>
+        <div id="follow">
+            <h1 class="primary">&gt; Follow us Online!</h1>
+            <div class="p0 tc card bg-light b-primary">
+                <div class="row" style="display:flex;flex-wrap:wrap">
+                    <div class="6 col c">
+                        <p class="ph3">You can follow us and stay up to date on the campaign on Instagram, TikTok, and Twitter.
+                            We are @open_osu on each of these platforms.</p>
+                        <p class="ph3">As part of our effort to increase transparency, all files and documentation related to
+                            the campagin are hosted publicly on our Github organization, "openosu".</p>
+                        <div class="m0 f-primary">
+                            <a href="https://instagram.com/open_osu">
+                                <img class="inline-block m0" src="img/instagram.png" style="width:5em;max-width:20%" />
+                            </a>
+                            <a href="https://tiktok.com/@open_osu">
+                                <img class="inline-block m0" src="img/tiktok.png" style="width:5em;max-width:20%" />
+                            </a>
+                            <a href="https://x.com/open_osu">
+                                <img class="inline-block m0" src="img/twitter.png" style="width:5em;max-width:20%" />
+                            </a>
+                            <a href="https://github.com/openosu">
+                                <img class="inline-block m0" src="img/github.png" style="width:5em;max-width:20%" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="m0 6 col" style="display:flex">
+                        <img class="m0" src="img/cover.webp" style="display:block;max-width:100%;margin:auto" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="support">
+            <h1 class="primary">&gt; Support OpenOSU</h1>
+            <div class="tc card bg-light b-primary">
+                <div class="row m0">
+                    <div class="6 col">
+                        <h2 class="primary">Individual</h2>
+                        <p>
+                            Like what we are doing? We'd love to have your endorsement! 
+                            Shoot us an email with the button below!<br><br>
+                        </p>
+                        <form action="mailto://contact@openosu.org">
+                            <button class="btn primary" type="submit"> Email us! </button>
+                        </form>
+                    </div>
+                    <div class="6 col">
+                        <h2 class="primary">Organization</h2>
+                        <p>
+                            Do you run an organization at OSU? We'd love to come to a
+                            meeting to talk about our campaign, and have your endorsement.
+                            Shoot us an email with the button below!<br><br>
+                        </p>
+                        <form action="mailto://contact@openosu.org">
+                            <button class="btn primary" type="submit"> Email us! </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tc m0 p3 bg-primary white">
+        <p class="m0" style="font:12pt serif">Go Beavs</p>
+        <p class="m0" style="font:12pt serif">Social Icons Created by <a class="white"
+                href="https://www.flaticon.com/authors/pixel-perfect">Pixel Perfect</a> and <a class="white"
+                href="https://www.flaticon.com/authors/freepik">Freepik</a></p>
+        <p class="m0" style="font:12pt serif">Open Source on <a class="white" href="https://github.com/OpenOSU">Github</a></p>
+    </div>
+</body>
+
+</html>
