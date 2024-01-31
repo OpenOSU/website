@@ -19,6 +19,7 @@
                 --ReadableWhite: #fed;
                 --HeaderFont: "Oswald";
                 --ParagraphFont: "Nunito";
+                --CardBorderWidth: 0.5em;
                 scroll-behavior: smooth;
             }
             body {
@@ -80,7 +81,7 @@
             .card,
             pre {
                 padding: 1em;
-                border: solid 0.5em;
+                border: solid var(--CardBorderWidth);
             }
 
             .btn:hover,
@@ -439,15 +440,21 @@
                     hue-rotate(349deg) brightness(92%) contrast(85%);
             }
 
-            .fix-main-nav-centering {
-                transform: translateY(-0.2em);
+            .title-screen {
+                height: calc(100vh - var(--CardBorderWidth));
+            }
+
+            .no-bottom-border {
+                border-bottom: none;
             }
         </style>
     </head>
 
     <body class="m0">
-        <div class="m0 vh-100" id="top">
-            <div class="tc card vh-100 bg-light b-primary">
+        <div class="m0 title-screen" id="top">
+            <div
+                class="tc card title-screen no-bottom-border bg-light b-primary"
+            >
                 <div class="vc c">
                     <img
                         class="f-primary mb3"
@@ -494,20 +501,10 @@
             </div>
         </div>
         <div class="tc m0 p2 bg-primary row sticky">
-            <a class="col light m2 large fix-main-nav-centering" href="#about"
-                >About</a
-            >
-            <a
-                class="col light m2 large fix-main-nav-centering"
-                href="#resources"
-                >Resources</a
-            >
-            <a class="col light m2 large fix-main-nav-centering" href="#follow"
-                >Follow</a
-            >
-            <a class="col light m2 large fix-main-nav-centering" href="#support"
-                >Support</a
-            >
+            <a class="col light m2 large" href="#about">About</a>
+            <a class="col light m2 large" href="#resources">Resources</a>
+            <a class="col light m2 large" href="#follow">Follow</a>
+            <a class="col light m2 large" href="#support">Support</a>
         </div>
         <img class="m0 w-100" src="img/banner.webp" />
         <div class="c">
