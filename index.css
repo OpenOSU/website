@@ -1,0 +1,138 @@
+:root {
+    --OpenOrange: #a42;
+    --BackdropOrange: #dba;
+    --ReadableWhite: #fed;
+    --HeaderFont: "Oswald";
+    --ParagraphFont: "Nunito";
+    --CardBorderWidth: 0.5em;
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background-color: var(--ReadableWhite);
+    font: 1em/1.6 var(--HeaderFont);
+    color: var(--OpenOrange);
+}
+h1 {
+    font-size: 2.5em;
+    font-weight: 500;
+    margin: 0.75em 0;
+}
+h2 {
+    font-size: 2.2em;
+    font-weight: 500;
+    margin: 0.5em 0;
+    text-align: center;
+}
+p {
+    color: black;
+    font-family: var(--ParagraphFont);
+    font-weight: 500;
+    padding: 0 2em;
+}
+a {
+    color: var(--OpenOrange);
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+form {
+    text-align: center;
+    margin-bottom: 2em;
+}
+button {
+    color: var(--ReadableWhite);
+    background: var(--OpenOrange);
+    border: solid var(--OpenOrange);
+    font: 500 0.8em var(--HeaderFont);
+    padding: 1em;
+    text-transform: uppercase;
+}
+footer {
+    background-color: var(--OpenOrange);
+    text-align: center;
+    padding: 2em 0;
+}
+footer p {
+    font: 12pt serif;
+    color: var(--ReadableWhite);
+    margin: 0;
+}
+footer a {
+    color: var(--ReadableWhite);
+    font-family: var(--HeaderFont);
+}
+
+
+#top {
+    height: calc(100vh - (2 * var(--CardBorderWidth)));
+    text-align: center;
+    background-color: var(--BackdropOrange);
+    border: solid var(--OpenOrange) var(--CardBorderWidth);
+    border-bottom: none;
+}
+#top > div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#top > div > img {
+    max-width: 80vw;
+    max-height: 40vh;
+    margin-bottom: 1em;
+}
+#elections{
+    font-size: 1.5em;
+}
+.social-icon {
+    max-width: 20vw;
+    max-height: 7.5vh;
+}
+
+
+#nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: var(--OpenOrange);
+}
+#nav > a {
+    font-weight: 300;
+    font-size: 1.5em;
+    margin: 0.5em;
+    color: var(--BackdropOrange);
+}
+#nav > a:hover {
+    color: var(--ReadableWhite);
+}
+
+
+#content {
+    max-width: 60em;
+    padding: 1em;
+    margin: auto;
+}
+.card {
+    background-color: var(--BackdropOrange);
+    border: solid var(--OpenOrange) var(--CardBorderWidth);
+    overflow: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.row > div:first-child:nth-last-child(2),
+.row > div:first-child:nth-last-child(2) ~ div {
+    max-width: 29em;
+}
+.row > div:first-child:nth-last-child(3),
+.row > div:first-child:nth-last-child(3) ~ div {
+    max-width: 19em;
+}
