@@ -125,17 +125,20 @@ footer a {
     align-items: start;
 }
 
-@media screen and (max-width: 850px) {
-    .row {
-        display: block;
-    }
-}
-
 .row > * {
     flex-grow: 1;
     width: 0;
 }
 
+@media screen and (max-width: 850px) {
+    .row {
+        display: block;
+    }
+
+    .row > * {
+        width: unset;
+    }
+}
 /* .row > div:first-child:nth-last-child(2),
 .row > div:first-child:nth-last-child(2) ~ div {
     max-width: 29em;
