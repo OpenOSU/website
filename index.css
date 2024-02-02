@@ -131,6 +131,11 @@ footer a {
     }
 }
 
+.row > * {
+    flex-grow: 1;
+    width: 0;
+}
+
 /* .row > div:first-child:nth-last-child(2),
 .row > div:first-child:nth-last-child(2) ~ div {
     max-width: 29em;
