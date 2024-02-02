@@ -121,15 +121,21 @@ footer a {
 }
 .row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: start;
 }
-.row > div:first-child:nth-last-child(2),
+
+@media screen and (max-width: 700px) {
+    .row {
+        display: block;
+    }
+}
+
+/* .row > div:first-child:nth-last-child(2),
 .row > div:first-child:nth-last-child(2) ~ div {
     max-width: 29em;
-}
-.row > div:first-child:nth-last-child(3),
+} */
+/* .row > div:first-child:nth-last-child(3),
 .row > div:first-child:nth-last-child(3) ~ div {
     max-width: 19em;
-}
+} */
