@@ -64,7 +64,6 @@ footer a {
     font-family: var(--HeaderFont);
 }
 
-
 #top {
     height: calc(100vh - (2 * var(--CardBorderWidth)));
     text-align: center;
@@ -82,14 +81,13 @@ footer a {
     max-height: 40vh;
     margin-bottom: 1em;
 }
-#elections{
+#elections {
     font-size: 1.5em;
 }
 .social-icon {
     max-width: 20vw;
     max-height: 7.5vh;
 }
-
 
 #nav {
     width: 100%;
@@ -111,7 +109,6 @@ footer a {
     color: var(--ReadableWhite);
 }
 
-
 #content {
     max-width: 60em;
     padding: 1em;
@@ -124,15 +121,29 @@ footer a {
 }
 .row {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
 }
-.row > div:first-child:nth-last-child(2),
+
+.row > * {
+    flex-grow: 1;
+    width: 0;
+}
+
+@media screen and (max-width: 850px) {
+    .row {
+        display: block;
+    }
+
+    .row > * {
+        width: unset;
+    }
+}
+/* .row > div:first-child:nth-last-child(2),
 .row > div:first-child:nth-last-child(2) ~ div {
     max-width: 29em;
-}
-.row > div:first-child:nth-last-child(3),
+} */
+/* .row > div:first-child:nth-last-child(3),
 .row > div:first-child:nth-last-child(3) ~ div {
     max-width: 19em;
-}
+} */
